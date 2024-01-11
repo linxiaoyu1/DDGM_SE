@@ -1,0 +1,644 @@
+2022-11-02 14:43:42,485 INFO {
+    "activation": "tanh",
+    "batch_size": 128,
+    "beta_w": 0.01,
+    "beta_z": 0.01,
+    "dataset_name": "voicebank",
+    "decay_option": "all",
+    "device": "cuda",
+    "dkf_bidir_gx": false,
+    "dkf_dense_g_z_dkf": "32",
+    "dkf_dense_x_gx": "256",
+    "dkf_dense_z_x_dkf": "32,64,128,256",
+    "dkf_dense_ztm1_g": "32",
+    "dkf_dim_RNN_gx": 128,
+    "dkf_num_RNN_gx": 1,
+    "dropout": 0,
+    "dvae_type": "rvae",
+    "eval_iter": 5000,
+    "exp_name": "vb_rvae_c_decay_3e-3",
+    "fe_dim_list": [
+        256
+    ],
+    "ff_size": 1024,
+    "fs": 16000,
+    "hop_percent": 0.25,
+    "infW_dim": 512,
+    "infW_num_layer": 2,
+    "lr_scheduler": [
+        60000
+    ],
+    "max_lr": 0.003,
+    "min_lr": 1e-08,
+    "nb_worker": 8,
+    "num_generate": 50,
+    "num_head": 8,
+    "num_layer": 12,
+    "out_dir": "./output/vb_rvae_c_decay_3e-3",
+    "policy": "cosine",
+    "print_iter": 500,
+    "resume_pth": null,
+    "rvae_bidir_g_x": false,
+    "rvae_bidir_h": false,
+    "rvae_dense_g_z": 128,
+    "rvae_dense_h_x": null,
+    "rvae_dense_x_gx": null,
+    "rvae_dense_z_gz": null,
+    "rvae_dense_z_h": null,
+    "rvae_dim_RNN_g_x": 128,
+    "rvae_dim_RNN_g_z": 128,
+    "rvae_dim_RNN_h": 128,
+    "rvae_num_RNN_g_x": 1,
+    "rvae_num_RNN_g_z": 1,
+    "rvae_num_RNN_h": 1,
+    "seed": 458,
+    "seq_len": 100,
+    "srnn_dense_gz_z": "64,32",
+    "srnn_dense_hx_g": "256",
+    "srnn_dense_hz_x": "256",
+    "srnn_dense_hz_z": "64,32",
+    "srnn_dense_x_h": "256",
+    "srnn_dim_RNN_g": 128,
+    "srnn_dim_RNN_h": 128,
+    "srnn_num_RNN_g": 1,
+    "srnn_num_RNN_h": 1,
+    "srnn_schedule_sampling": null,
+    "srnn_ss_iters": 8000,
+    "test_dir": "/scratch/bacchus/xilin/data/VoiceBankDemand/clean_testset_wav_16k",
+    "total_iter": 200000,
+    "train_dir": "/scratch/bacchus/xilin/data/QUT_WSJ0/val",
+    "train_filename": "/scratch/bacchus/xilin/data/VoiceBankDemand/train_wlen64_hop25_fs16k_trim.npz",
+    "trans_dim": 256,
+    "vae_dense_x_z": "128",
+    "val_dir": "/scratch/bacchus/xilin/data/VoiceBankDemand/clean_valset_2spk_wav_16k",
+    "val_filename": "/scratch/bacchus/xilin/data/VoiceBankDemand/val_wlen64_hop25_fs16k_trim.npz",
+    "w_dim": 32,
+    "warmup_iter": 5000,
+    "weight_decay": 1e-05,
+    "wlen_sec": 0.064,
+    "x_dim": 513,
+    "z_dim": 16,
+    "zp_percent": 0
+}
+2022-11-02 14:44:15,968 INFO Loading dataset: voicebank
+2022-11-02 14:44:15,969 INFO Train: 10802 audio sequences
+2022-11-02 14:44:15,970 INFO Val: 770 audio sequences
+2022-11-02 14:44:15,976 INFO Loading network...
+2022-11-02 14:44:15,977 INFO Total params: 0.58M
+2022-11-02 14:45:51,412 INFO Warmup iter 500 : Re. 4387.12 	 kld 74.091 	
+2022-11-02 14:47:23,615 INFO Warmup iter 1000 : Re. 2493.24 	 kld 166.586 	
+2022-11-02 14:48:55,575 INFO Warmup iter 1500 : Re. 1306.81 	 kld 106.750 	
+2022-11-02 14:50:27,333 INFO Warmup iter 2000 : Re. 964.22 	 kld 135.409 	
+2022-11-02 14:51:58,868 INFO Warmup iter 2500 : Re. 851.39 	 kld 135.941 	
+2022-11-02 14:53:30,937 INFO Warmup iter 3000 : Re. 778.81 	 kld 128.845 	
+2022-11-02 14:55:06,258 INFO Warmup iter 3500 : Re. 735.40 	 kld 122.278 	
+2022-11-02 14:56:37,606 INFO Warmup iter 4000 : Re. 701.18 	 kld 114.120 	
+2022-11-02 14:58:08,293 INFO Warmup iter 4500 : Re. 669.55 	 kld 109.903 	
+2022-11-02 14:59:39,646 INFO Warmup iter 5000 : Re. 647.18 	 kld 104.011 	
+2022-11-02 14:59:53,612 INFO Evaluation 5000 : SI-SDR ar. 4.16201 (best. 4.16201 @ iter5000) 
+2022-11-02 14:59:53,613 INFO 	-->Loss improved!!! Save best!!!
+2022-11-02 15:01:25,828 INFO Training iter 5500 : Re. 625.28 	 kld 99.625 	
+2022-11-02 15:02:57,605 INFO Training iter 6000 : Re. 603.52 	 kld 97.307 	
+2022-11-02 15:04:30,074 INFO Training iter 6500 : Re. 584.92 	 kld 95.584 	
+2022-11-02 15:06:01,994 INFO Training iter 7000 : Re. 570.16 	 kld 94.434 	
+2022-11-02 15:07:34,124 INFO Training iter 7500 : Re. 555.07 	 kld 93.527 	
+2022-11-02 15:09:06,127 INFO Training iter 8000 : Re. 542.89 	 kld 92.341 	
+2022-11-02 15:10:38,037 INFO Training iter 8500 : Re. 538.08 	 kld 91.758 	
+2022-11-02 15:12:09,600 INFO Training iter 9000 : Re. 528.46 	 kld 90.548 	
+2022-11-02 15:13:41,316 INFO Training iter 9500 : Re. 524.76 	 kld 89.949 	
+2022-11-02 15:15:13,525 INFO Training iter 10000 : Re. 515.25 	 kld 89.329 	
+2022-11-02 15:15:24,965 INFO Evaluation 10000 : SI-SDR ar. 7.33219 (best. 7.33219 @ iter10000) 
+2022-11-02 15:15:24,966 INFO 	-->Loss improved!!! Save best!!!
+2022-11-02 15:16:57,025 INFO Training iter 10500 : Re. 507.45 	 kld 88.381 	
+2022-11-02 15:18:29,379 INFO Training iter 11000 : Re. 505.61 	 kld 88.091 	
+2022-11-02 15:20:01,989 INFO Training iter 11500 : Re. 496.42 	 kld 87.330 	
+2022-11-02 15:21:33,693 INFO Training iter 12000 : Re. 491.48 	 kld 86.961 	
+2022-11-02 15:23:06,141 INFO Training iter 12500 : Re. 485.89 	 kld 86.639 	
+2022-11-02 15:24:38,820 INFO Training iter 13000 : Re. 482.27 	 kld 86.272 	
+2022-11-02 15:26:11,001 INFO Training iter 13500 : Re. 479.87 	 kld 86.106 	
+2022-11-02 15:27:43,473 INFO Training iter 14000 : Re. 475.55 	 kld 85.762 	
+2022-11-02 15:29:15,387 INFO Training iter 14500 : Re. 471.68 	 kld 85.525 	
+2022-11-02 15:30:48,481 INFO Training iter 15000 : Re. 470.31 	 kld 85.237 	
+2022-11-02 15:31:00,224 INFO Evaluation 15000 : SI-SDR ar. 8.65865 (best. 8.65865 @ iter15000) 
+2022-11-02 15:31:00,224 INFO 	-->Loss improved!!! Save best!!!
+2022-11-02 15:32:32,860 INFO Training iter 15500 : Re. 466.01 	 kld 85.059 	
+2022-11-02 15:34:05,301 INFO Training iter 16000 : Re. 461.94 	 kld 84.895 	
+2022-11-02 15:35:37,142 INFO Training iter 16500 : Re. 461.12 	 kld 84.799 	
+2022-11-02 15:37:09,534 INFO Training iter 17000 : Re. 458.41 	 kld 84.732 	
+2022-11-02 15:38:41,634 INFO Training iter 17500 : Re. 454.77 	 kld 84.483 	
+2022-11-02 15:40:13,009 INFO Training iter 18000 : Re. 453.30 	 kld 84.548 	
+2022-11-02 15:41:45,123 INFO Training iter 18500 : Re. 455.94 	 kld 84.376 	
+2022-11-02 15:43:16,492 INFO Training iter 19000 : Re. 450.15 	 kld 84.165 	
+2022-11-02 15:44:48,961 INFO Training iter 19500 : Re. 448.04 	 kld 84.219 	
+2022-11-02 15:46:21,458 INFO Training iter 20000 : Re. 446.74 	 kld 84.114 	
+2022-11-02 15:46:33,103 INFO Evaluation 20000 : SI-SDR ar. 9.30124 (best. 9.30124 @ iter20000) 
+2022-11-02 15:46:33,104 INFO 	-->Loss improved!!! Save best!!!
+2022-11-02 15:48:05,996 INFO Training iter 20500 : Re. 448.03 	 kld 84.265 	
+2022-11-02 15:49:38,171 INFO Training iter 21000 : Re. 443.40 	 kld 84.036 	
+2022-11-02 15:51:10,435 INFO Training iter 21500 : Re. 441.60 	 kld 83.999 	
+2022-11-02 15:52:41,111 INFO Training iter 22000 : Re. 440.98 	 kld 84.125 	
+2022-11-02 15:54:14,109 INFO Training iter 22500 : Re. 439.43 	 kld 84.085 	
+2022-11-02 15:55:45,855 INFO Training iter 23000 : Re. 438.02 	 kld 83.844 	
+2022-11-02 15:57:18,222 INFO Training iter 23500 : Re. 436.59 	 kld 83.940 	
+2022-11-02 15:58:50,273 INFO Training iter 24000 : Re. 436.39 	 kld 83.837 	
+2022-11-02 16:00:22,273 INFO Training iter 24500 : Re. 434.96 	 kld 83.741 	
+2022-11-02 16:01:54,562 INFO Training iter 25000 : Re. 432.91 	 kld 83.859 	
+2022-11-02 16:02:05,986 INFO Evaluation 25000 : SI-SDR ar. 9.51935 (best. 9.51935 @ iter25000) 
+2022-11-02 16:02:05,987 INFO 	-->Loss improved!!! Save best!!!
+2022-11-02 16:03:38,215 INFO Training iter 25500 : Re. 434.18 	 kld 83.790 	
+2022-11-02 16:05:10,607 INFO Training iter 26000 : Re. 429.87 	 kld 83.595 	
+2022-11-02 16:06:42,440 INFO Training iter 26500 : Re. 428.21 	 kld 83.746 	
+2022-11-02 16:08:14,274 INFO Training iter 27000 : Re. 427.40 	 kld 83.750 	
+2022-11-02 16:09:46,433 INFO Training iter 27500 : Re. 426.24 	 kld 83.735 	
+2022-11-02 16:11:18,414 INFO Training iter 28000 : Re. 426.38 	 kld 83.842 	
+2022-11-02 16:12:51,127 INFO Training iter 28500 : Re. 426.28 	 kld 83.720 	
+2022-11-02 16:14:23,229 INFO Training iter 29000 : Re. 424.74 	 kld 83.676 	
+2022-11-02 16:15:55,389 INFO Training iter 29500 : Re. 423.61 	 kld 83.629 	
+2022-11-02 16:17:27,856 INFO Training iter 30000 : Re. 422.73 	 kld 83.692 	
+2022-11-02 16:17:39,305 INFO Evaluation 30000 : SI-SDR ar. 9.75135 (best. 9.75135 @ iter30000) 
+2022-11-02 16:17:39,306 INFO 	-->Loss improved!!! Save best!!!
+2022-11-02 16:19:10,753 INFO Training iter 30500 : Re. 423.64 	 kld 83.583 	
+2022-11-02 16:20:42,886 INFO Training iter 31000 : Re. 421.59 	 kld 83.688 	
+2022-11-02 16:22:15,759 INFO Training iter 31500 : Re. 420.20 	 kld 83.756 	
+2022-11-02 16:23:48,060 INFO Training iter 32000 : Re. 418.96 	 kld 83.677 	
+2022-11-02 16:25:19,159 INFO Training iter 32500 : Re. 418.45 	 kld 83.695 	
+2022-11-02 16:26:51,293 INFO Training iter 33000 : Re. 418.34 	 kld 83.652 	
+2022-11-02 16:28:23,074 INFO Training iter 33500 : Re. 417.40 	 kld 83.636 	
+2022-11-02 16:29:55,781 INFO Training iter 34000 : Re. 417.09 	 kld 83.622 	
+2022-11-02 16:31:28,126 INFO Training iter 34500 : Re. 416.03 	 kld 83.705 	
+2022-11-02 16:32:59,477 INFO Training iter 35000 : Re. 414.85 	 kld 83.709 	
+2022-11-02 16:33:10,972 INFO Evaluation 35000 : SI-SDR ar. 7.98835 (best. 9.75135 @ iter30000) 
+2022-11-02 16:34:42,593 INFO Training iter 35500 : Re. 415.61 	 kld 83.741 	
+2022-11-02 16:36:14,383 INFO Training iter 36000 : Re. 414.70 	 kld 83.704 	
+2022-11-02 16:37:46,641 INFO Training iter 36500 : Re. 413.90 	 kld 83.677 	
+2022-11-02 16:39:19,456 INFO Training iter 37000 : Re. 534.04 	 kld 105.241 	
+2022-11-02 16:40:52,320 INFO Training iter 37500 : Re. 481.49 	 kld 102.515 	
+2022-11-02 16:42:24,749 INFO Training iter 38000 : Re. 453.67 	 kld 96.239 	
+2022-11-02 16:43:57,087 INFO Training iter 38500 : Re. 443.26 	 kld 92.665 	
+2022-11-02 16:45:27,850 INFO Training iter 39000 : Re. 434.21 	 kld 90.170 	
+2022-11-02 16:47:00,408 INFO Training iter 39500 : Re. 429.32 	 kld 88.470 	
+2022-11-02 16:48:32,621 INFO Training iter 40000 : Re. 425.14 	 kld 87.221 	
+2022-11-02 16:48:44,037 INFO Evaluation 40000 : SI-SDR ar. 9.34819 (best. 9.75135 @ iter30000) 
+2022-11-02 16:50:16,452 INFO Training iter 40500 : Re. 422.23 	 kld 86.371 	
+2022-11-02 16:51:48,821 INFO Training iter 41000 : Re. 420.06 	 kld 85.868 	
+2022-11-02 16:53:21,549 INFO Training iter 41500 : Re. 418.82 	 kld 85.396 	
+2022-11-02 16:54:53,656 INFO Training iter 42000 : Re. 417.63 	 kld 85.086 	
+2022-11-02 16:56:26,463 INFO Training iter 42500 : Re. 416.52 	 kld 84.772 	
+2022-11-02 16:57:57,947 INFO Training iter 43000 : Re. 413.66 	 kld 84.684 	
+2022-11-02 16:59:29,468 INFO Training iter 43500 : Re. 412.43 	 kld 84.537 	
+2022-11-02 17:01:02,155 INFO Training iter 44000 : Re. 412.19 	 kld 84.499 	
+2022-11-02 17:02:34,354 INFO Training iter 44500 : Re. 411.96 	 kld 84.292 	
+2022-11-02 17:04:07,206 INFO Training iter 45000 : Re. 411.60 	 kld 84.368 	
+2022-11-02 17:04:18,800 INFO Evaluation 45000 : SI-SDR ar. 9.63664 (best. 9.75135 @ iter30000) 
+2022-11-02 17:05:51,142 INFO Training iter 45500 : Re. 410.33 	 kld 84.349 	
+2022-11-02 17:07:23,512 INFO Training iter 46000 : Re. 408.28 	 kld 84.289 	
+2022-11-02 17:08:55,908 INFO Training iter 46500 : Re. 407.28 	 kld 84.300 	
+2022-11-02 17:10:28,337 INFO Training iter 47000 : Re. 407.81 	 kld 84.238 	
+2022-11-02 17:11:59,836 INFO Training iter 47500 : Re. 409.52 	 kld 84.297 	
+2022-11-02 17:13:32,258 INFO Training iter 48000 : Re. 405.35 	 kld 84.155 	
+2022-11-02 17:15:04,412 INFO Training iter 48500 : Re. 404.80 	 kld 84.209 	
+2022-11-02 17:16:36,640 INFO Training iter 49000 : Re. 404.77 	 kld 84.218 	
+2022-11-02 17:18:07,924 INFO Training iter 49500 : Re. 409.50 	 kld 84.245 	
+2022-11-02 17:19:40,232 INFO Training iter 50000 : Re. 403.42 	 kld 84.069 	
+2022-11-02 17:19:51,897 INFO Evaluation 50000 : SI-SDR ar. 9.85457 (best. 9.85457 @ iter50000) 
+2022-11-02 17:19:51,898 INFO 	-->Loss improved!!! Save best!!!
+2022-11-02 17:21:24,099 INFO Training iter 50500 : Re. 402.71 	 kld 84.170 	
+2022-11-02 17:22:56,097 INFO Training iter 51000 : Re. 402.28 	 kld 84.102 	
+2022-11-02 17:24:28,340 INFO Training iter 51500 : Re. 401.64 	 kld 84.024 	
+2022-11-02 17:25:59,910 INFO Training iter 52000 : Re. 400.36 	 kld 84.237 	
+2022-11-02 17:27:31,266 INFO Training iter 52500 : Re. 400.19 	 kld 84.225 	
+2022-11-02 17:29:03,141 INFO Training iter 53000 : Re. 400.20 	 kld 84.240 	
+2022-11-02 17:30:35,720 INFO Training iter 53500 : Re. 399.21 	 kld 84.181 	
+2022-11-02 17:32:07,609 INFO Training iter 54000 : Re. 399.37 	 kld 84.195 	
+2022-11-02 17:33:39,662 INFO Training iter 54500 : Re. 397.89 	 kld 84.180 	
+2022-11-02 17:35:11,844 INFO Training iter 55000 : Re. 397.68 	 kld 84.244 	
+2022-11-02 17:35:23,387 INFO Evaluation 55000 : SI-SDR ar. 9.76445 (best. 9.85457 @ iter50000) 
+2022-11-02 17:36:55,641 INFO Training iter 55500 : Re. 399.45 	 kld 84.215 	
+2022-11-02 17:38:26,821 INFO Training iter 56000 : Re. 397.37 	 kld 84.208 	
+2022-11-02 17:39:59,352 INFO Training iter 56500 : Re. 396.83 	 kld 84.241 	
+2022-11-02 17:41:31,815 INFO Training iter 57000 : Re. 397.15 	 kld 84.198 	
+2022-11-02 17:43:03,929 INFO Training iter 57500 : Re. 396.10 	 kld 84.319 	
+2022-11-02 17:44:36,353 INFO Training iter 58000 : Re. 395.62 	 kld 84.220 	
+2022-11-02 17:46:08,560 INFO Training iter 58500 : Re. 395.98 	 kld 84.338 	
+2022-11-02 17:47:41,057 INFO Training iter 59000 : Re. 394.51 	 kld 84.362 	
+2022-11-02 17:49:13,122 INFO Training iter 59500 : Re. 394.15 	 kld 84.295 	
+2022-11-02 17:50:45,261 INFO Training iter 60000 : Re. 394.27 	 kld 84.433 	
+2022-11-02 17:50:56,987 INFO Evaluation 60000 : SI-SDR ar. 5.57901 (best. 9.85457 @ iter50000) 
+2022-11-02 17:52:28,352 INFO Training iter 60500 : Re. 397.55 	 kld 84.419 	
+2022-11-02 17:54:00,150 INFO Training iter 61000 : Re. 394.12 	 kld 84.316 	
+2022-11-02 17:55:32,233 INFO Training iter 61500 : Re. 394.03 	 kld 84.315 	
+2022-11-02 17:57:04,583 INFO Training iter 62000 : Re. 392.01 	 kld 84.274 	
+2022-11-02 17:58:36,713 INFO Training iter 62500 : Re. 393.24 	 kld 84.272 	
+2022-11-02 18:00:08,898 INFO Training iter 63000 : Re. 393.55 	 kld 84.242 	
+2022-11-02 18:01:41,182 INFO Training iter 63500 : Re. 392.20 	 kld 84.277 	
+2022-11-02 18:03:12,952 INFO Training iter 64000 : Re. 391.81 	 kld 84.300 	
+2022-11-02 18:04:43,581 INFO Training iter 64500 : Re. 391.20 	 kld 84.298 	
+2022-11-02 18:06:16,723 INFO Training iter 65000 : Re. 391.06 	 kld 84.342 	
+2022-11-02 18:06:28,269 INFO Evaluation 65000 : SI-SDR ar. 9.67967 (best. 9.85457 @ iter50000) 
+2022-11-02 18:08:00,186 INFO Training iter 65500 : Re. 390.05 	 kld 84.277 	
+2022-11-02 18:09:32,846 INFO Training iter 66000 : Re. 390.87 	 kld 84.264 	
+2022-11-02 18:11:04,582 INFO Training iter 66500 : Re. 389.26 	 kld 84.369 	
+2022-11-02 18:12:36,377 INFO Training iter 67000 : Re. 389.31 	 kld 84.316 	
+2022-11-02 18:14:08,706 INFO Training iter 67500 : Re. 388.65 	 kld 84.321 	
+2022-11-02 18:15:40,810 INFO Training iter 68000 : Re. 388.32 	 kld 84.345 	
+2022-11-02 18:17:13,232 INFO Training iter 68500 : Re. 388.36 	 kld 84.379 	
+2022-11-02 18:18:44,732 INFO Training iter 69000 : Re. 388.28 	 kld 84.338 	
+2022-11-02 18:20:17,720 INFO Training iter 69500 : Re. 387.18 	 kld 84.350 	
+2022-11-02 18:21:50,584 INFO Training iter 70000 : Re. 387.47 	 kld 84.369 	
+2022-11-02 18:22:02,051 INFO Evaluation 70000 : SI-SDR ar. 9.64266 (best. 9.85457 @ iter50000) 
+2022-11-02 18:23:35,099 INFO Training iter 70500 : Re. 387.54 	 kld 84.447 	
+2022-11-02 18:25:07,487 INFO Training iter 71000 : Re. 386.60 	 kld 84.450 	
+2022-11-02 18:26:39,651 INFO Training iter 71500 : Re. 386.60 	 kld 84.451 	
+2022-11-02 18:28:11,686 INFO Training iter 72000 : Re. 386.21 	 kld 84.413 	
+2022-11-02 18:29:44,155 INFO Training iter 72500 : Re. 385.52 	 kld 84.514 	
+2022-11-02 18:31:15,895 INFO Training iter 73000 : Re. 385.80 	 kld 84.479 	
+2022-11-02 18:32:48,690 INFO Training iter 73500 : Re. 385.20 	 kld 84.516 	
+2022-11-02 18:34:20,737 INFO Training iter 74000 : Re. 385.88 	 kld 84.400 	
+2022-11-02 18:35:53,145 INFO Training iter 74500 : Re. 385.05 	 kld 84.511 	
+2022-11-02 18:37:25,276 INFO Training iter 75000 : Re. 384.33 	 kld 84.439 	
+2022-11-02 18:37:36,857 INFO Evaluation 75000 : SI-SDR ar. 10.06515 (best. 10.06515 @ iter75000) 
+2022-11-02 18:37:36,858 INFO 	-->Loss improved!!! Save best!!!
+2022-11-02 18:39:10,334 INFO Training iter 75500 : Re. 384.19 	 kld 84.429 	
+2022-11-02 18:40:43,411 INFO Training iter 76000 : Re. 384.76 	 kld 84.477 	
+2022-11-02 18:42:16,182 INFO Training iter 76500 : Re. 384.06 	 kld 84.427 	
+2022-11-02 18:43:48,174 INFO Training iter 77000 : Re. 383.81 	 kld 84.485 	
+2022-11-02 18:45:20,313 INFO Training iter 77500 : Re. 384.41 	 kld 84.517 	
+2022-11-02 18:46:52,124 INFO Training iter 78000 : Re. 382.80 	 kld 84.491 	
+2022-11-02 18:48:24,058 INFO Training iter 78500 : Re. 383.04 	 kld 84.455 	
+2022-11-02 18:49:56,649 INFO Training iter 79000 : Re. 384.18 	 kld 84.586 	
+2022-11-02 18:51:28,627 INFO Training iter 79500 : Re. 381.64 	 kld 84.464 	
+2022-11-02 18:53:00,941 INFO Training iter 80000 : Re. 382.04 	 kld 84.580 	
+2022-11-02 18:53:12,247 INFO Evaluation 80000 : SI-SDR ar. 9.93881 (best. 10.06515 @ iter75000) 
+2022-11-02 18:54:44,407 INFO Training iter 80500 : Re. 382.59 	 kld 84.485 	
+2022-11-02 18:56:16,858 INFO Training iter 81000 : Re. 381.86 	 kld 84.459 	
+2022-11-02 18:57:48,080 INFO Training iter 81500 : Re. 381.46 	 kld 84.502 	
+2022-11-02 18:59:19,869 INFO Training iter 82000 : Re. 380.79 	 kld 84.493 	
+2022-11-02 19:00:51,593 INFO Training iter 82500 : Re. 381.08 	 kld 84.497 	
+2022-11-02 19:02:23,712 INFO Training iter 83000 : Re. 381.61 	 kld 84.403 	
+2022-11-02 19:03:56,201 INFO Training iter 83500 : Re. 380.99 	 kld 84.389 	
+2022-11-02 19:05:28,458 INFO Training iter 84000 : Re. 379.50 	 kld 84.534 	
+2022-11-02 19:07:01,284 INFO Training iter 84500 : Re. 380.23 	 kld 84.503 	
+2022-11-02 19:08:32,875 INFO Training iter 85000 : Re. 379.34 	 kld 84.484 	
+2022-11-02 19:08:44,263 INFO Evaluation 85000 : SI-SDR ar. 9.71894 (best. 10.06515 @ iter75000) 
+2022-11-02 19:10:16,138 INFO Training iter 85500 : Re. 380.15 	 kld 84.463 	
+2022-11-02 19:11:47,549 INFO Training iter 86000 : Re. 379.01 	 kld 84.504 	
+2022-11-02 19:13:20,437 INFO Training iter 86500 : Re. 379.42 	 kld 84.630 	
+2022-11-02 19:14:52,846 INFO Training iter 87000 : Re. 385.92 	 kld 84.441 	
+2022-11-02 19:16:25,803 INFO Training iter 87500 : Re. 379.24 	 kld 84.525 	
+2022-11-02 19:17:58,445 INFO Training iter 88000 : Re. 378.61 	 kld 84.459 	
+2022-11-02 19:19:30,704 INFO Training iter 88500 : Re. 377.98 	 kld 84.523 	
+2022-11-02 19:21:02,018 INFO Training iter 89000 : Re. 377.42 	 kld 84.562 	
+2022-11-02 19:22:34,569 INFO Training iter 89500 : Re. 379.31 	 kld 84.497 	
+2022-11-02 19:24:06,118 INFO Training iter 90000 : Re. 377.32 	 kld 84.540 	
+2022-11-02 19:24:17,674 INFO Evaluation 90000 : SI-SDR ar. 9.89874 (best. 10.06515 @ iter75000) 
+2022-11-02 19:25:50,787 INFO Training iter 90500 : Re. 376.74 	 kld 84.574 	
+2022-11-02 19:27:23,906 INFO Training iter 91000 : Re. 377.34 	 kld 84.602 	
+2022-11-02 19:28:56,228 INFO Training iter 91500 : Re. 376.50 	 kld 84.619 	
+2022-11-02 19:30:29,206 INFO Training iter 92000 : Re. 376.05 	 kld 84.619 	
+2022-11-02 19:32:01,355 INFO Training iter 92500 : Re. 376.63 	 kld 84.642 	
+2022-11-02 19:33:33,582 INFO Training iter 93000 : Re. 376.32 	 kld 84.602 	
+2022-11-02 19:35:05,391 INFO Training iter 93500 : Re. 376.82 	 kld 84.600 	
+2022-11-02 19:36:37,608 INFO Training iter 94000 : Re. 376.32 	 kld 84.651 	
+2022-11-02 19:38:09,218 INFO Training iter 94500 : Re. 374.91 	 kld 84.604 	
+2022-11-02 19:39:41,674 INFO Training iter 95000 : Re. 375.34 	 kld 84.617 	
+2022-11-02 19:39:53,223 INFO Evaluation 95000 : SI-SDR ar. 9.97748 (best. 10.06515 @ iter75000) 
+2022-11-02 19:41:26,048 INFO Training iter 95500 : Re. 375.57 	 kld 84.604 	
+2022-11-02 19:42:58,260 INFO Training iter 96000 : Re. 374.75 	 kld 84.593 	
+2022-11-02 19:44:29,538 INFO Training iter 96500 : Re. 374.45 	 kld 84.728 	
+2022-11-02 19:46:01,813 INFO Training iter 97000 : Re. 374.47 	 kld 84.703 	
+2022-11-02 19:47:34,603 INFO Training iter 97500 : Re. 374.25 	 kld 84.720 	
+2022-11-02 19:49:07,104 INFO Training iter 98000 : Re. 374.18 	 kld 84.676 	
+2022-11-02 19:50:38,732 INFO Training iter 98500 : Re. 373.25 	 kld 84.711 	
+2022-11-02 19:52:11,248 INFO Training iter 99000 : Re. 372.93 	 kld 84.741 	
+2022-11-02 19:53:43,850 INFO Training iter 99500 : Re. 373.25 	 kld 84.782 	
+2022-11-02 19:55:15,851 INFO Training iter 100000 : Re. 374.00 	 kld 84.719 	
+2022-11-02 19:55:27,366 INFO Evaluation 100000 : SI-SDR ar. 9.96771 (best. 10.06515 @ iter75000) 
+2022-11-02 19:56:59,529 INFO Training iter 100500 : Re. 373.45 	 kld 84.641 	
+2022-11-02 19:58:31,334 INFO Training iter 101000 : Re. 373.13 	 kld 84.670 	
+2022-11-02 20:00:03,759 INFO Training iter 101500 : Re. 372.43 	 kld 84.662 	
+2022-11-02 20:01:36,103 INFO Training iter 102000 : Re. 372.28 	 kld 84.737 	
+2022-11-02 20:03:07,026 INFO Training iter 102500 : Re. 373.38 	 kld 84.737 	
+2022-11-02 20:04:39,537 INFO Training iter 103000 : Re. 372.06 	 kld 84.686 	
+2022-11-02 20:06:12,310 INFO Training iter 103500 : Re. 371.83 	 kld 84.816 	
+2022-11-02 20:07:45,130 INFO Training iter 104000 : Re. 371.24 	 kld 84.771 	
+2022-11-02 20:09:17,258 INFO Training iter 104500 : Re. 371.78 	 kld 84.763 	
+2022-11-02 20:10:48,886 INFO Training iter 105000 : Re. 370.91 	 kld 84.879 	
+2022-11-02 20:11:00,299 INFO Evaluation 105000 : SI-SDR ar. 9.72346 (best. 10.06515 @ iter75000) 
+2022-11-02 20:12:31,915 INFO Training iter 105500 : Re. 371.95 	 kld 84.764 	
+2022-11-02 20:14:04,227 INFO Training iter 106000 : Re. 370.54 	 kld 84.831 	
+2022-11-02 20:15:36,832 INFO Training iter 106500 : Re. 370.27 	 kld 84.844 	
+2022-11-02 20:17:08,140 INFO Training iter 107000 : Re. 370.39 	 kld 84.832 	
+2022-11-02 20:18:40,306 INFO Training iter 107500 : Re. 371.16 	 kld 84.844 	
+2022-11-02 20:20:12,050 INFO Training iter 108000 : Re. 370.87 	 kld 84.850 	
+2022-11-02 20:21:44,381 INFO Training iter 108500 : Re. 371.89 	 kld 84.821 	
+2022-11-02 20:23:16,766 INFO Training iter 109000 : Re. 370.65 	 kld 84.869 	
+2022-11-02 20:24:48,480 INFO Training iter 109500 : Re. 370.20 	 kld 84.819 	
+2022-11-02 20:26:21,011 INFO Training iter 110000 : Re. 369.71 	 kld 84.893 	
+2022-11-02 20:26:32,576 INFO Evaluation 110000 : SI-SDR ar. 9.94605 (best. 10.06515 @ iter75000) 
+2022-11-02 20:28:04,930 INFO Training iter 110500 : Re. 369.31 	 kld 84.880 	
+2022-11-02 20:29:36,335 INFO Training iter 111000 : Re. 369.46 	 kld 84.928 	
+2022-11-02 20:31:08,102 INFO Training iter 111500 : Re. 372.07 	 kld 84.774 	
+2022-11-02 20:32:40,315 INFO Training iter 112000 : Re. 369.48 	 kld 84.853 	
+2022-11-02 20:34:12,821 INFO Training iter 112500 : Re. 368.73 	 kld 84.934 	
+2022-11-02 20:35:45,440 INFO Training iter 113000 : Re. 369.03 	 kld 84.935 	
+2022-11-02 20:37:17,811 INFO Training iter 113500 : Re. 370.30 	 kld 84.982 	
+2022-11-02 20:38:50,419 INFO Training iter 114000 : Re. 368.10 	 kld 84.917 	
+2022-11-02 20:40:22,764 INFO Training iter 114500 : Re. 368.02 	 kld 84.973 	
+2022-11-02 20:41:55,159 INFO Training iter 115000 : Re. 369.05 	 kld 84.911 	
+2022-11-02 20:42:06,647 INFO Evaluation 115000 : SI-SDR ar. 9.68923 (best. 10.06515 @ iter75000) 
+2022-11-02 20:43:38,129 INFO Training iter 115500 : Re. 367.78 	 kld 84.997 	
+2022-11-02 20:45:10,454 INFO Training iter 116000 : Re. 367.71 	 kld 84.992 	
+2022-11-02 20:46:43,261 INFO Training iter 116500 : Re. 367.68 	 kld 85.013 	
+2022-11-02 20:48:15,712 INFO Training iter 117000 : Re. 367.27 	 kld 85.028 	
+2022-11-02 20:49:48,078 INFO Training iter 117500 : Re. 367.33 	 kld 84.998 	
+2022-11-02 20:51:20,844 INFO Training iter 118000 : Re. 366.89 	 kld 85.024 	
+2022-11-02 20:52:52,458 INFO Training iter 118500 : Re. 366.68 	 kld 85.010 	
+2022-11-02 20:54:24,559 INFO Training iter 119000 : Re. 367.26 	 kld 85.103 	
+2022-11-02 20:55:57,425 INFO Training iter 119500 : Re. 366.78 	 kld 85.048 	
+2022-11-02 20:57:28,664 INFO Training iter 120000 : Re. 366.77 	 kld 85.064 	
+2022-11-02 20:57:40,272 INFO Evaluation 120000 : SI-SDR ar. 9.86126 (best. 10.06515 @ iter75000) 
+2022-11-02 20:59:12,968 INFO Training iter 120500 : Re. 366.49 	 kld 85.090 	
+2022-11-02 21:00:45,417 INFO Training iter 121000 : Re. 366.04 	 kld 85.113 	
+2022-11-02 21:02:18,323 INFO Training iter 121500 : Re. 365.98 	 kld 85.076 	
+2022-11-02 21:03:51,078 INFO Training iter 122000 : Re. 365.82 	 kld 85.070 	
+2022-11-02 21:05:22,949 INFO Training iter 122500 : Re. 367.72 	 kld 85.035 	
+2022-11-02 21:06:55,544 INFO Training iter 123000 : Re. 365.45 	 kld 85.118 	
+2022-11-02 21:08:28,062 INFO Training iter 123500 : Re. 368.28 	 kld 85.033 	
+2022-11-02 21:09:59,412 INFO Training iter 124000 : Re. 365.76 	 kld 85.120 	
+2022-11-02 21:11:31,922 INFO Training iter 124500 : Re. 365.26 	 kld 85.147 	
+2022-11-02 21:13:04,900 INFO Training iter 125000 : Re. 365.09 	 kld 85.125 	
+2022-11-02 21:13:16,545 INFO Evaluation 125000 : SI-SDR ar. 9.71050 (best. 10.06515 @ iter75000) 
+2022-11-02 21:14:48,079 INFO Training iter 125500 : Re. 364.81 	 kld 85.115 	
+2022-11-02 21:16:20,050 INFO Training iter 126000 : Re. 364.99 	 kld 85.144 	
+2022-11-02 21:17:52,268 INFO Training iter 126500 : Re. 364.63 	 kld 85.182 	
+2022-11-02 21:19:24,395 INFO Training iter 127000 : Re. 364.85 	 kld 85.152 	
+2022-11-02 21:20:56,128 INFO Training iter 127500 : Re. 364.71 	 kld 85.221 	
+2022-11-02 21:22:28,319 INFO Training iter 128000 : Re. 364.43 	 kld 85.215 	
+2022-11-02 21:23:59,901 INFO Training iter 128500 : Re. 364.72 	 kld 85.237 	
+2022-11-02 21:25:32,059 INFO Training iter 129000 : Re. 364.80 	 kld 85.143 	
+2022-11-02 21:27:04,715 INFO Training iter 129500 : Re. 364.20 	 kld 85.255 	
+2022-11-02 21:28:37,225 INFO Training iter 130000 : Re. 363.94 	 kld 85.251 	
+2022-11-02 21:28:48,531 INFO Evaluation 130000 : SI-SDR ar. 9.64174 (best. 10.06515 @ iter75000) 
+2022-11-02 21:30:21,309 INFO Training iter 130500 : Re. 363.98 	 kld 85.222 	
+2022-11-02 21:31:53,675 INFO Training iter 131000 : Re. 363.40 	 kld 85.264 	
+2022-11-02 21:33:25,884 INFO Training iter 131500 : Re. 363.44 	 kld 85.318 	
+2022-11-02 21:34:58,168 INFO Training iter 132000 : Re. 363.44 	 kld 85.307 	
+2022-11-02 21:36:29,176 INFO Training iter 132500 : Re. 363.31 	 kld 85.307 	
+2022-11-02 21:38:01,366 INFO Training iter 133000 : Re. 362.99 	 kld 85.357 	
+2022-11-02 21:39:33,586 INFO Training iter 133500 : Re. 363.06 	 kld 85.385 	
+2022-11-02 21:41:05,673 INFO Training iter 134000 : Re. 363.12 	 kld 85.367 	
+2022-11-02 21:42:37,772 INFO Training iter 134500 : Re. 362.52 	 kld 85.420 	
+2022-11-02 21:44:10,281 INFO Training iter 135000 : Re. 362.96 	 kld 85.378 	
+2022-11-02 21:44:21,829 INFO Evaluation 135000 : SI-SDR ar. 9.74709 (best. 10.06515 @ iter75000) 
+2022-11-02 21:45:53,749 INFO Training iter 135500 : Re. 362.33 	 kld 85.419 	
+2022-11-02 21:47:26,105 INFO Training iter 136000 : Re. 362.35 	 kld 85.435 	
+2022-11-02 21:48:58,393 INFO Training iter 136500 : Re. 362.52 	 kld 85.451 	
+2022-11-02 21:50:29,899 INFO Training iter 137000 : Re. 361.91 	 kld 85.478 	
+2022-11-02 21:52:02,392 INFO Training iter 137500 : Re. 362.87 	 kld 85.422 	
+2022-11-02 21:53:34,024 INFO Training iter 138000 : Re. 362.60 	 kld 85.389 	
+2022-11-02 21:55:05,740 INFO Training iter 138500 : Re. 361.77 	 kld 85.479 	
+2022-11-02 21:56:37,811 INFO Training iter 139000 : Re. 361.63 	 kld 85.534 	
+2022-11-02 21:58:09,731 INFO Training iter 139500 : Re. 362.83 	 kld 85.452 	
+2022-11-02 21:59:42,190 INFO Training iter 140000 : Re. 361.53 	 kld 85.539 	
+2022-11-02 21:59:53,533 INFO Evaluation 140000 : SI-SDR ar. 9.70248 (best. 10.06515 @ iter75000) 
+2022-11-02 22:01:25,702 INFO Training iter 140500 : Re. 361.35 	 kld 85.536 	
+2022-11-02 22:02:56,787 INFO Training iter 141000 : Re. 361.52 	 kld 85.519 	
+2022-11-02 22:04:29,726 INFO Training iter 141500 : Re. 361.04 	 kld 85.576 	
+2022-11-02 22:06:01,593 INFO Training iter 142000 : Re. 360.77 	 kld 85.551 	
+2022-11-02 22:07:34,196 INFO Training iter 142500 : Re. 361.09 	 kld 85.596 	
+2022-11-02 22:09:07,042 INFO Training iter 143000 : Re. 360.83 	 kld 85.566 	
+2022-11-02 22:10:39,163 INFO Training iter 143500 : Re. 360.82 	 kld 85.633 	
+2022-11-02 22:12:11,756 INFO Training iter 144000 : Re. 360.80 	 kld 85.582 	
+2022-11-02 22:13:43,637 INFO Training iter 144500 : Re. 360.44 	 kld 85.612 	
+2022-11-02 22:15:15,984 INFO Training iter 145000 : Re. 360.25 	 kld 85.662 	
+2022-11-02 22:15:27,412 INFO Evaluation 145000 : SI-SDR ar. 9.76083 (best. 10.06515 @ iter75000) 
+2022-11-02 22:16:58,794 INFO Training iter 145500 : Re. 360.69 	 kld 85.622 	
+2022-11-02 22:18:30,806 INFO Training iter 146000 : Re. 359.92 	 kld 85.654 	
+2022-11-02 22:20:03,284 INFO Training iter 146500 : Re. 359.68 	 kld 85.635 	
+2022-11-02 22:21:36,073 INFO Training iter 147000 : Re. 359.79 	 kld 85.675 	
+2022-11-02 22:23:07,829 INFO Training iter 147500 : Re. 359.82 	 kld 85.701 	
+2022-11-02 22:24:39,665 INFO Training iter 148000 : Re. 359.74 	 kld 85.706 	
+2022-11-02 22:26:11,775 INFO Training iter 148500 : Re. 359.46 	 kld 85.705 	
+2022-11-02 22:27:43,313 INFO Training iter 149000 : Re. 359.43 	 kld 85.768 	
+2022-11-02 22:29:14,410 INFO Training iter 149500 : Re. 359.38 	 kld 85.748 	
+2022-11-02 22:30:47,556 INFO Training iter 150000 : Re. 359.73 	 kld 85.695 	
+2022-11-02 22:30:59,093 INFO Evaluation 150000 : SI-SDR ar. 9.97955 (best. 10.06515 @ iter75000) 
+2022-11-02 22:32:31,839 INFO Training iter 150500 : Re. 360.54 	 kld 85.743 	
+2022-11-02 22:34:04,245 INFO Training iter 151000 : Re. 359.23 	 kld 85.770 	
+2022-11-02 22:35:36,407 INFO Training iter 151500 : Re. 358.75 	 kld 85.782 	
+2022-11-02 22:37:08,470 INFO Training iter 152000 : Re. 359.20 	 kld 85.793 	
+2022-11-02 22:38:41,245 INFO Training iter 152500 : Re. 359.20 	 kld 85.827 	
+2022-11-02 22:40:13,281 INFO Training iter 153000 : Re. 358.78 	 kld 85.820 	
+2022-11-02 22:41:45,481 INFO Training iter 153500 : Re. 358.50 	 kld 85.847 	
+2022-11-02 22:43:16,676 INFO Training iter 154000 : Re. 358.45 	 kld 85.834 	
+2022-11-02 22:44:48,595 INFO Training iter 154500 : Re. 358.34 	 kld 85.872 	
+2022-11-02 22:46:20,304 INFO Training iter 155000 : Re. 358.30 	 kld 85.885 	
+2022-11-02 22:46:31,996 INFO Evaluation 155000 : SI-SDR ar. 9.86781 (best. 10.06515 @ iter75000) 
+2022-11-02 22:48:04,064 INFO Training iter 155500 : Re. 358.35 	 kld 85.875 	
+2022-11-02 22:49:36,380 INFO Training iter 156000 : Re. 358.15 	 kld 85.869 	
+2022-11-02 22:51:08,362 INFO Training iter 156500 : Re. 379.95 	 kld 86.992 	
+2022-11-02 22:52:40,574 INFO Training iter 157000 : Re. 362.64 	 kld 85.892 	
+2022-11-02 22:54:12,199 INFO Training iter 157500 : Re. 359.73 	 kld 85.912 	
+2022-11-02 22:55:44,314 INFO Training iter 158000 : Re. 358.84 	 kld 85.970 	
+2022-11-02 22:57:16,825 INFO Training iter 158500 : Re. 358.61 	 kld 85.970 	
+2022-11-02 22:58:49,150 INFO Training iter 159000 : Re. 357.96 	 kld 85.906 	
+2022-11-02 23:00:20,313 INFO Training iter 159500 : Re. 357.74 	 kld 85.972 	
+2022-11-02 23:01:52,656 INFO Training iter 160000 : Re. 357.54 	 kld 85.937 	
+2022-11-02 23:02:04,037 INFO Evaluation 160000 : SI-SDR ar. 9.76074 (best. 10.06515 @ iter75000) 
+2022-11-02 23:03:36,259 INFO Training iter 160500 : Re. 357.38 	 kld 85.995 	
+2022-11-02 23:05:08,242 INFO Training iter 161000 : Re. 357.46 	 kld 85.955 	
+2022-11-02 23:06:40,352 INFO Training iter 161500 : Re. 357.22 	 kld 86.003 	
+2022-11-02 23:08:12,503 INFO Training iter 162000 : Re. 357.19 	 kld 86.015 	
+2022-11-02 23:09:43,928 INFO Training iter 162500 : Re. 357.11 	 kld 85.966 	
+2022-11-02 23:11:16,546 INFO Training iter 163000 : Re. 357.00 	 kld 86.018 	
+2022-11-02 23:12:49,973 INFO Training iter 163500 : Re. 356.78 	 kld 86.062 	
+2022-11-02 23:14:22,208 INFO Training iter 164000 : Re. 356.81 	 kld 86.044 	
+2022-11-02 23:15:54,415 INFO Training iter 164500 : Re. 356.77 	 kld 86.103 	
+2022-11-02 23:17:27,248 INFO Training iter 165000 : Re. 356.53 	 kld 86.084 	
+2022-11-02 23:17:38,684 INFO Evaluation 165000 : SI-SDR ar. 9.80496 (best. 10.06515 @ iter75000) 
+2022-11-02 23:19:11,169 INFO Training iter 165500 : Re. 357.16 	 kld 86.054 	
+2022-11-02 23:20:43,374 INFO Training iter 166000 : Re. 356.39 	 kld 86.090 	
+2022-11-02 23:22:13,903 INFO Training iter 166500 : Re. 356.42 	 kld 86.072 	
+2022-11-02 23:23:46,234 INFO Training iter 167000 : Re. 356.39 	 kld 86.143 	
+2022-11-02 23:25:18,526 INFO Training iter 167500 : Re. 356.29 	 kld 86.147 	
+2022-11-02 23:26:50,285 INFO Training iter 168000 : Re. 356.27 	 kld 86.139 	
+2022-11-02 23:28:21,831 INFO Training iter 168500 : Re. 356.50 	 kld 86.156 	
+2022-11-02 23:29:54,474 INFO Training iter 169000 : Re. 356.19 	 kld 86.139 	
+2022-11-02 23:31:27,098 INFO Training iter 169500 : Re. 356.01 	 kld 86.140 	
+2022-11-02 23:32:59,569 INFO Training iter 170000 : Re. 355.92 	 kld 86.160 	
+2022-11-02 23:33:11,163 INFO Evaluation 170000 : SI-SDR ar. 9.78933 (best. 10.06515 @ iter75000) 
+2022-11-02 23:34:42,890 INFO Training iter 170500 : Re. 355.82 	 kld 86.188 	
+2022-11-02 23:36:14,660 INFO Training iter 171000 : Re. 355.74 	 kld 86.226 	
+2022-11-02 23:37:47,330 INFO Training iter 171500 : Re. 355.65 	 kld 86.207 	
+2022-11-02 23:39:18,596 INFO Training iter 172000 : Re. 355.63 	 kld 86.209 	
+2022-11-02 23:40:50,851 INFO Training iter 172500 : Re. 355.53 	 kld 86.230 	
+2022-11-02 23:42:23,525 INFO Training iter 173000 : Re. 355.64 	 kld 86.263 	
+2022-11-02 23:43:55,278 INFO Training iter 173500 : Re. 355.42 	 kld 86.245 	
+2022-11-02 23:45:27,498 INFO Training iter 174000 : Re. 355.41 	 kld 86.262 	
+2022-11-02 23:46:59,306 INFO Training iter 174500 : Re. 355.63 	 kld 86.236 	
+2022-11-02 23:48:30,491 INFO Training iter 175000 : Re. 355.41 	 kld 86.249 	
+2022-11-02 23:48:42,062 INFO Evaluation 175000 : SI-SDR ar. 9.82429 (best. 10.06515 @ iter75000) 
+2022-11-02 23:50:14,366 INFO Training iter 175500 : Re. 355.09 	 kld 86.249 	
+2022-11-02 23:51:46,645 INFO Training iter 176000 : Re. 355.28 	 kld 86.273 	
+2022-11-02 23:53:19,094 INFO Training iter 176500 : Re. 355.12 	 kld 86.275 	
+2022-11-02 23:54:51,566 INFO Training iter 177000 : Re. 355.09 	 kld 86.318 	
+2022-11-02 23:56:24,347 INFO Training iter 177500 : Re. 355.07 	 kld 86.321 	
+2022-11-02 23:57:55,819 INFO Training iter 178000 : Re. 354.94 	 kld 86.298 	
+2022-11-02 23:59:28,676 INFO Training iter 178500 : Re. 355.01 	 kld 86.346 	
+2022-11-03 00:01:00,960 INFO Training iter 179000 : Re. 354.85 	 kld 86.371 	
+2022-11-03 00:02:31,608 INFO Training iter 179500 : Re. 354.78 	 kld 86.320 	
+2022-11-03 00:04:04,106 INFO Training iter 180000 : Re. 354.69 	 kld 86.388 	
+2022-11-03 00:04:15,624 INFO Evaluation 180000 : SI-SDR ar. 9.61605 (best. 10.06515 @ iter75000) 
+2022-11-03 00:05:47,576 INFO Training iter 180500 : Re. 354.73 	 kld 86.324 	
+2022-11-03 00:07:19,682 INFO Training iter 181000 : Re. 354.68 	 kld 86.354 	
+2022-11-03 00:08:52,378 INFO Training iter 181500 : Re. 354.82 	 kld 86.399 	
+2022-11-03 00:10:24,584 INFO Training iter 182000 : Re. 354.49 	 kld 86.382 	
+2022-11-03 00:11:56,783 INFO Training iter 182500 : Re. 354.47 	 kld 86.380 	
+2022-11-03 00:13:29,004 INFO Training iter 183000 : Re. 354.54 	 kld 86.403 	
+2022-11-03 00:15:00,514 INFO Training iter 183500 : Re. 354.45 	 kld 86.423 	
+2022-11-03 00:16:32,227 INFO Training iter 184000 : Re. 354.42 	 kld 86.411 	
+2022-11-03 00:18:04,971 INFO Training iter 184500 : Re. 354.64 	 kld 86.439 	
+2022-11-03 00:19:37,297 INFO Training iter 185000 : Re. 354.42 	 kld 86.406 	
+2022-11-03 00:19:48,899 INFO Evaluation 185000 : SI-SDR ar. 9.64496 (best. 10.06515 @ iter75000) 
+2022-11-03 00:21:21,023 INFO Training iter 185500 : Re. 354.22 	 kld 86.449 	
+2022-11-03 00:22:53,272 INFO Training iter 186000 : Re. 354.26 	 kld 86.443 	
+2022-11-03 00:24:25,571 INFO Training iter 186500 : Re. 354.26 	 kld 86.422 	
+2022-11-03 00:25:57,738 INFO Training iter 187000 : Re. 354.17 	 kld 86.416 	
+2022-11-03 00:27:29,786 INFO Training iter 187500 : Re. 354.17 	 kld 86.454 	
+2022-11-03 00:29:01,670 INFO Training iter 188000 : Re. 354.10 	 kld 86.459 	
+2022-11-03 00:30:33,932 INFO Training iter 188500 : Re. 354.07 	 kld 86.462 	
+2022-11-03 00:32:06,208 INFO Training iter 189000 : Re. 353.95 	 kld 86.475 	
+2022-11-03 00:33:38,837 INFO Training iter 189500 : Re. 353.96 	 kld 86.464 	
+2022-11-03 00:35:10,952 INFO Training iter 190000 : Re. 353.92 	 kld 86.511 	
+2022-11-03 00:35:22,623 INFO Evaluation 190000 : SI-SDR ar. 9.72284 (best. 10.06515 @ iter75000) 
+2022-11-03 00:36:54,753 INFO Training iter 190500 : Re. 353.96 	 kld 86.479 	
+2022-11-03 00:38:26,874 INFO Training iter 191000 : Re. 353.93 	 kld 86.531 	
+2022-11-03 00:39:59,484 INFO Training iter 191500 : Re. 353.95 	 kld 86.528 	
+2022-11-03 00:41:31,200 INFO Training iter 192000 : Re. 353.81 	 kld 86.523 	
+2022-11-03 00:43:03,420 INFO Training iter 192500 : Re. 353.93 	 kld 86.492 	
+2022-11-03 00:44:35,861 INFO Training iter 193000 : Re. 353.82 	 kld 86.484 	
+2022-11-03 00:46:08,233 INFO Training iter 193500 : Re. 353.81 	 kld 86.512 	
+2022-11-03 00:47:40,294 INFO Training iter 194000 : Re. 353.73 	 kld 86.547 	
+2022-11-03 00:49:12,321 INFO Training iter 194500 : Re. 353.70 	 kld 86.515 	
+2022-11-03 00:50:44,504 INFO Training iter 195000 : Re. 353.80 	 kld 86.521 	
+2022-11-03 00:50:56,125 INFO Evaluation 195000 : SI-SDR ar. 9.70125 (best. 10.06515 @ iter75000) 
+2022-11-03 00:52:27,592 INFO Training iter 195500 : Re. 353.67 	 kld 86.506 	
+2022-11-03 00:54:00,126 INFO Training iter 196000 : Re. 353.65 	 kld 86.509 	
+2022-11-03 00:55:31,650 INFO Training iter 196500 : Re. 353.68 	 kld 86.524 	
+2022-11-03 00:57:04,340 INFO Training iter 197000 : Re. 353.65 	 kld 86.539 	
+2022-11-03 00:58:36,926 INFO Training iter 197500 : Re. 353.66 	 kld 86.515 	
+2022-11-03 01:00:08,530 INFO Training iter 198000 : Re. 353.68 	 kld 86.527 	
+2022-11-03 01:01:40,712 INFO Training iter 198500 : Re. 353.58 	 kld 86.530 	
+2022-11-03 01:03:12,830 INFO Training iter 199000 : Re. 353.65 	 kld 86.523 	
+2022-11-03 01:04:45,342 INFO Training iter 199500 : Re. 353.62 	 kld 86.535 	
+2022-11-03 01:06:17,348 INFO Training iter 200000 : Re. 353.63 	 kld 86.534 	
+2022-11-03 01:06:28,685 INFO Evaluation 200000 : SI-SDR ar. 9.71030 (best. 10.06515 @ iter75000) 
+2022-11-03 01:07:59,784 INFO Training iter 200500 : Re. 353.63 	 kld 86.515 	
+2022-11-03 01:09:32,084 INFO Training iter 201000 : Re. 353.53 	 kld 86.509 	
+2022-11-03 01:11:04,467 INFO Training iter 201500 : Re. 353.64 	 kld 86.522 	
+2022-11-03 01:12:37,248 INFO Training iter 202000 : Re. 353.57 	 kld 86.534 	
+2022-11-03 01:14:09,681 INFO Training iter 202500 : Re. 353.59 	 kld 86.537 	
+2022-11-03 01:15:42,115 INFO Training iter 203000 : Re. 353.60 	 kld 86.528 	
+2022-11-03 01:17:14,193 INFO Training iter 203500 : Re. 353.55 	 kld 86.532 	
+2022-11-03 01:18:46,590 INFO Training iter 204000 : Re. 353.54 	 kld 86.539 	
+2022-11-03 01:20:18,205 INFO Training iter 204500 : Re. 353.48 	 kld 86.539 	
+2022-11-03 01:21:49,920 INFO Training iter 205000 : Re. 353.53 	 kld 86.534 	
+2022-11-03 01:22:01,394 INFO Evaluation 205000 : SI-SDR ar. 9.71223 (best. 10.06515 @ iter75000) 
+2022-11-03 01:22:01,611 INFO ****************************************************************************************************
+2022-11-03 01:22:01,611 INFO Test with the best model
+2022-11-03 01:22:01,611 INFO ****************************************************************************************************
+2022-11-03 01:22:01,611 INFO Evaluation on test dataset...
+2022-11-03 01:22:01,632 INFO Total samples 824
+2022-11-03 01:22:01,632 INFO ================================================================================
+2022-11-03 01:22:01,633 INFO fs: 16000
+2022-11-03 01:22:01,633 INFO wlen: 1024
+2022-11-03 01:22:01,633 INFO hop: 256
+2022-11-03 01:22:01,633 INFO nfft: 1024
+2022-11-03 01:22:01,633 INFO ================================================================================
+2022-11-03 01:27:01,144 INFO Re-synthesis finished
+2022-11-03 01:27:01,146 INFO Mean evaluation
+2022-11-03 01:27:01,146 INFO mean rmse score: 0.0445
+2022-11-03 01:27:01,146 INFO mean sisdr score: 10.1
+2022-11-03 01:27:01,146 INFO mean pypesq wb score: 3.49
+2022-11-03 01:27:01,146 INFO mean pesq wb score: 3.18
+2022-11-03 01:27:01,146 INFO mean pesq nb score: 3.53
+2022-11-03 01:27:01,146 INFO mean estoi score: 0.92
+2022-11-03 01:27:01,226 INFO Median evaluation
+2022-11-03 01:27:01,226 INFO median rmse score: 0.0413 +/- 0.0013
+2022-11-03 01:27:01,226 INFO median sisdr score: 10.0 +/- 0.1
+2022-11-03 01:27:01,226 INFO median pypesq score: 3.48 +/- 0.01
+2022-11-03 01:27:01,226 INFO median pesq wb score: 3.19 +/- 0.02
+2022-11-03 01:27:01,226 INFO median pesq nb score: 3.52 +/- 0.02
+2022-11-03 01:27:01,227 INFO median estoi score: 0.92 +/- 0.00
+2022-11-03 01:27:01,227 INFO Evaluation on validation dataset...
+2022-11-03 01:27:01,253 INFO Total samples 770
+2022-11-03 01:27:01,253 INFO ================================================================================
+2022-11-03 01:27:01,253 INFO fs: 16000
+2022-11-03 01:27:01,253 INFO wlen: 1024
+2022-11-03 01:27:01,253 INFO hop: 256
+2022-11-03 01:27:01,254 INFO nfft: 1024
+2022-11-03 01:27:01,254 INFO ================================================================================
+2022-11-03 01:32:17,124 INFO Re-synthesis finished
+2022-11-03 01:32:17,125 INFO Mean evaluation
+2022-11-03 01:32:17,125 INFO mean rmse score: 0.0427
+2022-11-03 01:32:17,125 INFO mean sisdr score: 9.8
+2022-11-03 01:32:17,125 INFO mean pypesq wb score: 3.53
+2022-11-03 01:32:17,125 INFO mean pesq wb score: 3.21
+2022-11-03 01:32:17,125 INFO mean pesq nb score: 3.58
+2022-11-03 01:32:17,125 INFO mean estoi score: 0.91
+2022-11-03 01:32:17,127 INFO Median evaluation
+2022-11-03 01:32:17,127 INFO median rmse score: 0.0422 +/- 0.0007
+2022-11-03 01:32:17,127 INFO median sisdr score: 9.8 +/- 0.1
+2022-11-03 01:32:17,127 INFO median pypesq score: 3.52 +/- 0.01
+2022-11-03 01:32:17,127 INFO median pesq wb score: 3.20 +/- 0.02
+2022-11-03 01:32:17,127 INFO median pesq nb score: 3.58 +/- 0.01
+2022-11-03 01:32:17,127 INFO median estoi score: 0.91 +/- 0.00
+2022-11-03 01:32:17,128 INFO ****************************************************************************************************
+2022-11-03 01:32:17,128 INFO Test with the latest model
+2022-11-03 01:32:17,128 INFO ****************************************************************************************************
+2022-11-03 01:32:17,128 INFO Evaluation on test dataset...
+2022-11-03 01:32:17,147 INFO Total samples 824
+2022-11-03 01:32:17,147 INFO ================================================================================
+2022-11-03 01:32:17,147 INFO fs: 16000
+2022-11-03 01:32:17,147 INFO wlen: 1024
+2022-11-03 01:32:17,147 INFO hop: 256
+2022-11-03 01:32:17,147 INFO nfft: 1024
+2022-11-03 01:32:17,147 INFO ================================================================================
+2022-11-03 01:37:12,792 INFO Re-synthesis finished
+2022-11-03 01:37:12,794 INFO Mean evaluation
+2022-11-03 01:37:12,794 INFO mean rmse score: 0.0459
+2022-11-03 01:37:12,794 INFO mean sisdr score: 9.8
+2022-11-03 01:37:12,794 INFO mean pypesq wb score: 3.49
+2022-11-03 01:37:12,794 INFO mean pesq wb score: 3.15
+2022-11-03 01:37:12,794 INFO mean pesq nb score: 3.53
+2022-11-03 01:37:12,794 INFO mean estoi score: 0.92
+2022-11-03 01:37:12,796 INFO Median evaluation
+2022-11-03 01:37:12,796 INFO median rmse score: 0.0437 +/- 0.0013
+2022-11-03 01:37:12,796 INFO median sisdr score: 9.7 +/- 0.1
+2022-11-03 01:37:12,796 INFO median pypesq score: 3.49 +/- 0.01
+2022-11-03 01:37:12,796 INFO median pesq wb score: 3.17 +/- 0.02
+2022-11-03 01:37:12,796 INFO median pesq nb score: 3.53 +/- 0.02
+2022-11-03 01:37:12,796 INFO median estoi score: 0.92 +/- 0.00
+2022-11-03 01:37:12,796 INFO Evaluation on validation dataset...
+2022-11-03 01:37:12,814 INFO Total samples 770
+2022-11-03 01:37:12,814 INFO ================================================================================
+2022-11-03 01:37:12,815 INFO fs: 16000
+2022-11-03 01:37:12,815 INFO wlen: 1024
+2022-11-03 01:37:12,815 INFO hop: 256
+2022-11-03 01:37:12,815 INFO nfft: 1024
+2022-11-03 01:37:12,815 INFO ================================================================================
+2022-11-03 01:42:28,531 INFO Re-synthesis finished
+2022-11-03 01:42:28,532 INFO Mean evaluation
+2022-11-03 01:42:28,532 INFO mean rmse score: 0.0429
+2022-11-03 01:42:28,532 INFO mean sisdr score: 9.8
+2022-11-03 01:42:28,532 INFO mean pypesq wb score: 3.55
+2022-11-03 01:42:28,532 INFO mean pesq wb score: 3.21
+2022-11-03 01:42:28,532 INFO mean pesq nb score: 3.62
+2022-11-03 01:42:28,532 INFO mean estoi score: 0.92
+2022-11-03 01:42:28,534 INFO Median evaluation
+2022-11-03 01:42:28,534 INFO median rmse score: 0.0418 +/- 0.0007
+2022-11-03 01:42:28,534 INFO median sisdr score: 9.8 +/- 0.1
+2022-11-03 01:42:28,534 INFO median pypesq score: 3.56 +/- 0.01
+2022-11-03 01:42:28,534 INFO median pesq wb score: 3.21 +/- 0.02
+2022-11-03 01:42:28,534 INFO median pesq nb score: 3.63 +/- 0.01
+2022-11-03 01:42:28,534 INFO median estoi score: 0.92 +/- 0.00
