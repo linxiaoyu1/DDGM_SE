@@ -6,7 +6,7 @@ To train the model in the noise-dependent way, run
 
 To train the model in the noise-agnostic way, run first
 
-`python ./src/data_preprocessing/_split_vp.py`
+`python ./src/data_preprocessing/_split_vb.py`
 
 to generate the json files for the dataset, then run
 
